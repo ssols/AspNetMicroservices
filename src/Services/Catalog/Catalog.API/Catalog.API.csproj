@@ -1,11 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>00d2f78d-5c04-4459-9bd8-cb75b80ebf5d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="mongodb.driver" Version="2.13.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
 </Project>
