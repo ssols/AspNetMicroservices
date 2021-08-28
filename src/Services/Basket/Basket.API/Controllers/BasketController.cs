@@ -2,6 +2,7 @@
 using Basket.API.Entities;
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
+using EventBus.Messages.Events;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -74,7 +75,7 @@ namespace Basket.API.Controllers
             }
 
             // Send checkout event to RabbitMQ
-            var eventMessage = _mapper.Map<BasketCheckout>(basketCheckout);
+            var eventMessage = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
             eventMessage.TotalPrice = basket.TotalPrice;
 
             await _publishEndpoint.Publish(eventMessage);
