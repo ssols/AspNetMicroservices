@@ -9,16 +9,7 @@
           "Host": "localhost",
           "Port": 8000
         }
-      ],
-      "UpstreamPathTemplate": "/Catalog",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": true,
-        "Period": "5s",
-        "PeriodTimespan": 1,
-        "Limit": 1
-      }
+      ]
     },
     {
       "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
@@ -79,7 +70,14 @@
         }
       ],
       "UpstreamPathTemplate": "/Basket/Checkout",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "3s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      }
     },
     // Discount.API
     {
